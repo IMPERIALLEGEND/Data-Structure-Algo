@@ -1,0 +1,7 @@
+# Ignore folders starting with a dot
+.*/
+
+# Ignore .exe and .class files
+*.exe
+*.class
+*.txt
