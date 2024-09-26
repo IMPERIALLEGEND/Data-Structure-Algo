@@ -38,6 +38,8 @@ public class CheckRotateEqual {
         
         String s1_s1 = s1 + s1;
 
+        return s1_s1.indexOf(s2) > 0 ? true : false;
+
      }
 
     public static void main(String[] args) {

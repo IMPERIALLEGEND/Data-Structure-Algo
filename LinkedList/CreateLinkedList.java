@@ -21,10 +21,12 @@ public class CreateLinkedList {
 
         head = deleteNode(head, 0);
         head = deleteNode(head, -1);
+
+        reverseLinkedList(head);
         print(head);
         // recursive_print(head);
 
-        //System.out.println(iterativeSearch(head, 20));
+        // System.out.println(iterativeSearch(head, 20));
         System.out.println(recursiveSearch(head, 10));
     }
 
@@ -159,5 +161,25 @@ public class CreateLinkedList {
         }
 
         return recursiveSearch(head.next, data) != -1 ? recursiveSearch(head.next, data) + 1 : -1;
+    }
+
+    public static Node reverseLinkedList(Node head) {
+
+        Node prev = null;
+        Node curr = head;
+        Node next = null;
+
+        if (head == null || head.next == null)
+            return head;
+
+        while (curr != null) {
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+
+        head = prev;
+        return head;
     }
 }
